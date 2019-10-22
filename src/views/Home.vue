@@ -1,18 +1,31 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <intro />
+    <elections-info />
+    <preloader v-if="loading" />
+    <candidates v-else :candidates="candidatesArray" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import { Intro, ElectionsInfo, Candidates, Preloader } from "@/components";
 
 export default {
   name: "home",
+  data() {
+    return {
+      loading: false,
+      candidatesArray: [
+        { name: "JALBA INA", thumbnail: "jalba", party: "usb", vote: 90 },
+        { name: "VIERU VALENTIN", thumbnail: "vieru", party: "acum", vote: 40 }
+      ]
+    };
+  },
   components: {
-    HelloWorld
+    Intro,
+    ElectionsInfo,
+    Candidates,
+    Preloader
   }
 };
 </script>
