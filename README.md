@@ -1,4 +1,5 @@
-# vue-local-elections
+# Vue local elections
+A Vue.js simple application that displays local elections result in real time. See demo [hire](https://elections.lebo.md).
 
 ## Project setup
 ```
