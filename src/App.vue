@@ -13,8 +13,8 @@ export default {
   name: "app",
   components: {
     Navbar,
-    FooterComp
-  }
+    FooterComp,
+  },
 };
 </script>
 

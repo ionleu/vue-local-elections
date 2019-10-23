@@ -3,9 +3,9 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center">
         <img
-          src="https://mereni.md/wp-content/uploads/2019/02/MERENI-BLUE.png"
+          :src="require('../../assets/img/mereni-logo.png')"
           class="responsive-img"
-          alt="Alegeri locale Mereni, tur II"
+          alt="Alegeri locale Mereni, turul II"
         />
       </a>
     </div>
@@ -14,6 +14,6 @@
 
 <script>
 export default {
-  name: "navbar"
+  name: "navbar",
 };
 </script>

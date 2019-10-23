@@ -1,31 +1,36 @@
 <template>
   <div>
     <intro />
-    <elections-info />
+    <elections-info v-if="!loading" :participationRate="participationRate" />
     <preloader v-if="loading" />
-    <candidates v-else :candidates="candidatesArray" />
+    <candidates v-else :candidates="candidates" />
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
 import { Intro, ElectionsInfo, Candidates, Preloader } from "@/components";
 
 export default {
   name: "home",
-  data() {
-    return {
-      loading: false,
-      candidatesArray: [
-        { name: "JALBA INA", thumbnail: "jalba", party: "usb", vote: 90 },
-        { name: "VIERU VALENTIN", thumbnail: "vieru", party: "acum", vote: 40 }
-      ]
-    };
-  },
+  data: () => ({
+    loading: true,
+  }),
   components: {
     Intro,
     ElectionsInfo,
     Candidates,
-    Preloader
-  }
+    Preloader,
+  },
+  async mounted() {
+    await this.fetchCandidates();
+    this.loading = false;
+  },
+  computed: {
+    ...mapGetters(["candidates", "participationRate"]),
+  },
+  methods: {
+    ...mapActions(["fetchCandidates"]),
+  },
 };
 </script>
