@@ -19,8 +19,8 @@ export default {
   props: {
     participationRate: {
       type: Number,
-      default: 80
-    }
-  }
+      default: 80,
+    },
+  },
 };
 </script>

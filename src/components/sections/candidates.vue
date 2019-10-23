@@ -20,7 +20,8 @@
                 :alt="c.party"
               />
             </div>
-            <strong>{{ c.vote }}%</strong>
+            <strong style="font-size: 1.2rem;">{{ c.vote }}%</strong>
+            <strong>{{ c.totalBallots }} voturi</strong>
             <span>{{ c.name }}</span>
           </div>
         </div>
@@ -34,8 +35,8 @@ export default {
   name: "candidates",
   props: {
     candidates: {
-      type: Array
-    }
-  }
+      type: Array,
+    },
+  },
 };
 </script>

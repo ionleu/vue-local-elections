@@ -1,30 +1,28 @@
 # Vue local elections
-A Vue.js simple application that displays local elections result in real time. See demo [hire](https://elections.lebo.md).
+A Vue.js simple application that displays local elections result in real time.
+See demo [here](https://elections.lebo.md).
 
-## Project setup
-```
-npm install
-```
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ionleu)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/techprimers/techprimers.github.io.svg)](https://github.com/ionleu/vue-local-elections/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/techprimers/techprimers.github.io.svg)](https://github.com/ionleu/vue-local-elections/network)
+[![GitHub issues](https://img.shields.io/github/issues/techprimers/techprimers.github.io.svg)](https://github.com/ionleu/vue-local-elections/issues?q=is%3Aissue+is%3Aopen)
+[![Contributors](https://img.shields.io/github/contributors/techprimers/techprimers.github.io.svg)](https://github.com/ionleu/vue-local-elections/graphs/contributors)
 
-### Compiles and hot-reloads for development
+## Project commands
 ```
-npm run serve
-```
+# Install dependencies
+npm i               
 
-### Compiles and minifies for production
-```
-npm run build
-```
+# Compiles and hot-reloads for development
+npm run serve       
 
-### Run your unit tests
-```
-npm run test:unit
-```
+# Compiles and minifies for production
+npm run build       
 
-### Lints and fixes files
-```
-npm run lint
-```
+# Lints and fixes files
+npm run lint        
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Run your unit tests
+npm run test:unit   
+```
