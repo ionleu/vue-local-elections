@@ -1,4 +1,4 @@
-export class CandidateAPI {
+export class CecAPI {
   constructor(baseUrl) {
     this.url = `https://cors-anywhere.herokuapp.com/${baseUrl}`;
   }

@@ -2,6 +2,9 @@
   <section class="bb">
     <div class="container">
       <div class="row">
+        <div class="sub-title center">
+          <h2>REZULTATELE PRELIMINARE</h2>
+        </div>
         <div
           v-for="(c, idx) of candidates"
           :key="idx"

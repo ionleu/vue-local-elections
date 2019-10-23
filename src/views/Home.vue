@@ -1,7 +1,7 @@
 <template>
   <div>
     <intro />
-    <elections-info v-if="!loading" :participationRate="participationRate" />
+    <elections-info v-if="!loading" :presence="info" />
     <preloader v-if="loading" />
     <candidates v-else :candidates="candidates" />
   </div>
@@ -24,13 +24,15 @@ export default {
   },
   async mounted() {
     await this.fetchCandidates();
+    await this.fetchPresenceInfo();
+    this.info.ValideVotes = this.valideVotes;
     this.loading = false;
   },
   computed: {
-    ...mapGetters(["candidates", "participationRate"]),
+    ...mapGetters(["candidates", "info", "valideVotes"]),
   },
   methods: {
-    ...mapActions(["fetchCandidates"]),
+    ...mapActions(["fetchCandidates", "fetchPresenceInfo"]),
   },
 };
 </script>
