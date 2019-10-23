@@ -3,7 +3,7 @@ export class CandidateAPI {
     this.url = `https://cors-anywhere.herokuapp.com/${baseUrl}`;
   }
 
-  async fetchCandidates() {
+  async get() {
     try {
       const response = await fetch(this.url);
       return await response.json();

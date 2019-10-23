@@ -18,28 +18,22 @@ export default {
       try {
         const candidates = [];
         let participationRate = 0;
-        const data = await candidateAPI.fetchCandidates();
+        const data = await candidateAPI.get();
 
         data
           .filter(c => c.ElectionCompetitorMemberId !== 26697)
           .map(c => {
             let el = {};
+            el.totalBallots = c.BallotCount;
+            el.totalBallotsValid = c.BallotsValidVotes;
+            el.vote = ((100 * c.BallotCount) / c.BallotsValidVotes).toFixed(2);
+
             if (c.ElectionCompetitorMemberId === 26936) {
               el.name = "JALBA INA";
-              el.totalBallots = c.BallotCount;
-              el.totalBallotsValid = c.BallotsValidVotes;
-              el.vote = ((100 * c.BallotCount) / c.BallotsValidVotes).toFixed(
-                2,
-              );
               el.thumbnail = "jalba";
               el.party = "usb";
             } else {
               el.name = "VIERU VALENTIN";
-              el.totalBallots = c.BallotCount;
-              el.totalBallotsValid = c.BallotsValidVotes;
-              el.vote = ((100 * c.BallotCount) / c.BallotsValidVotes).toFixed(
-                2,
-              );
               el.thumbnail = "vieru";
               el.party = "acum";
             }
