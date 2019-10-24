@@ -16,7 +16,8 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Rezultatele alegerilor locale, turul II, 3 noiembrie 2019",
+      default:
+        "Rezultatele preliminare a alegerilor locale din turul II, 3 noiembrie 2019",
     },
   },
 };

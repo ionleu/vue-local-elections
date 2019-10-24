@@ -1,3 +1,3 @@
-import { CandidateAPI } from "./candidate.service";
+import { CecAPI } from "./cec.service";
 
-export { CandidateAPI };
+export { CecAPI };
