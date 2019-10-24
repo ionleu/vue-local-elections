@@ -1,6 +1,10 @@
 export class CecAPI {
-  constructor(baseUrl) {
-    this.url = `https://cors-anywhere.herokuapp.com/${baseUrl}`;
+  constructor(report) {
+    const crosUrl = "https://cors-anywhere.herokuapp.com";
+    const cecUrl = "https://pv.cec.md/app1/api/localreports";
+    const cecUrlQuery = "circumscriptionId=1554&electionType=3";
+
+    this.url = `${crosUrl}/${cecUrl}/${report}?${cecUrlQuery}`;
   }
 
   async get() {

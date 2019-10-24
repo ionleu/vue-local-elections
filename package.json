@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "chart.js": "^2.8.0",
+    "chartjs-plugin-labels": "^1.1.0",
     "core-js": "^3.1.2",
     "materialize-css": "^1.0.0-rc.2",
     "register-service-worker": "^1.6.2",

@@ -1,7 +1,5 @@
 import { CecAPI } from "@/services";
-const cecPresenceUrl =
-  "https://pv.cec.md/app1/api/localreports/GetLocalElectionPresence?circumscriptionId=1554&electionType=3";
-const presenceAPI = new CecAPI(cecPresenceUrl);
+const presenceReport = new CecAPI("GetLocalElectionPresence");
 
 export default {
   state: {
@@ -13,7 +11,7 @@ export default {
   actions: {
     async fetchPresenceInfo({ commit }) {
       try {
-        const data = await presenceAPI.get();
+        const data = await presenceReport.get();
 
         commit("setInfo", data[0]);
       } catch (e) {

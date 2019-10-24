@@ -1,7 +1,5 @@
 import { CecAPI } from "@/services";
-const cecCandidateUrl =
-  "https://pv.cec.md/app1/api/localreports/GetTopElectionResults?electionType=3&circumscriptionId=1554";
-const candidateAPI = new CecAPI(cecCandidateUrl);
+const candidateReport = new CecAPI("GetTopElectionResults");
 
 export default {
   state: {
@@ -16,7 +14,7 @@ export default {
     async fetchCandidates({ commit }) {
       try {
         const candidates = [];
-        const data = await candidateAPI.get();
+        const data = await candidateReport.get();
 
         data
           .filter(c => c.ElectionCompetitorMemberId !== 26697)

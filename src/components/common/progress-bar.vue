@@ -1,6 +1,10 @@
 <template>
-  <div class="progress">
-    <div class="determinate" :style="`width: ${width}%`"></div>
+  <div class="progress grey lighten-2">
+    <div
+      class="determinate"
+      style="background: #0D3360"
+      :style="`width: ${width}%`"
+    ></div>
   </div>
 </template>
 
