@@ -11,6 +11,19 @@ nav {
   box-shadow: none !important;
 }
 
+a {
+  color: #104788;
+  font-weight: 400;
+}
+
+.btn {
+  background-color: #104788;
+}
+
+.btn:hover {
+  background-color: #0D3360;
+}
+
 .bb {
   border-bottom: 1px solid rgba(211, 214, 216, 0.29);
 }

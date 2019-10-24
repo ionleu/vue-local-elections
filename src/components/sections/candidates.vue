@@ -26,6 +26,17 @@
             <strong style="font-size: 1.2rem;">{{ c.vote }}%</strong>
             <strong>{{ c.totalBallots }} voturi</strong>
             <span>{{ c.name }}</span>
+            <div>
+              <a
+                :title="`Declarația de avere: ${c.name}`"
+                :alt="`Declarația de avere: ${c.name}`"
+                :href="c.incomeStatement"
+                target="_blank"
+                class="btn waves-effect waves-light btn-small"
+              >
+                DECLARAȚIE DE AVERE
+              </a>
+            </div>
           </div>
         </div>
       </div>

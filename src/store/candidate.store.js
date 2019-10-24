@@ -1,5 +1,6 @@
 import { CecAPI } from "@/services";
 const candidateReport = new CecAPI("GetTopElectionResults");
+const incomeStatementUrl = "https://api.alegeri.tv8.md/uploads/candidates";
 
 export default {
   state: {
@@ -27,10 +28,12 @@ export default {
               el.name = "JALBĂ INA";
               el.thumbnail = "jalba";
               el.party = "usb";
+              el.incomeStatement = `${incomeStatementUrl}/Ina%20Jalb%C4%83.pdf`;
             } else {
               el.name = "VIERU VALENTIN";
               el.thumbnail = "vieru";
               el.party = "acum";
+              el.incomeStatement = `${incomeStatementUrl}/Valentin%20Vieru.pdf`;
             }
 
             candidates.push(el);

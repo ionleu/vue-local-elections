@@ -4,12 +4,13 @@
       <div>
         <a
           title="Datele oferite de Comisia electorala centrala"
+          rel="noopener noreferrer"
           style="margin-top: 10px;"
           href="https://cec.md"
           target="_blank"
         >
           <img
-            src="https://pv.cec.md/images/CEC-Logo-Main-CircleText-Colorful-LightBG.svg"
+            :src="require('../../assets/img/cec-logo.svg')"
             alt="Comisia electorala centrala"
             height="50"
           />
