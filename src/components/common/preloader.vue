@@ -14,7 +14,11 @@
       </div>
     </div>
     <div style="margin-top: 10px;">
-      <small>Un moment, datele se proceseaza...</small>
+      <small>
+        Se procesează datele,
+        <br />
+        durează câteva secunde...
+      </small>
     </div>
   </div>
 </template>

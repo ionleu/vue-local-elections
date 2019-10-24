@@ -8,10 +8,12 @@
             <strong>{{ presenceRate }}%</strong>
             <div>
               <small>
-                Din {{ presence.TotalVoters }} de mereneni, cu dreptul la vot,
-                până acum, au votat {{ presence.TotalVoted }},
-                {{ presence.TotalVoted - presence.ValideVotes }} voturi fiind
-                nevalide.
+                Din <b>{{ presence.TotalVoters }}</b>
+                de mereneni, cu dreptul la vot, până acum, au votat
+                <b>{{ presence.TotalVoted }}</b>
+                , iar
+                <b>{{ presence.TotalVoted - presence.ValideVotes }}</b>
+                voturi fiind nevalide.
               </small>
             </div>
             <progress-bar :width="presenceRate" />
@@ -22,10 +24,9 @@
         <div class="col m8 s12 offset-m2">
           <div class="sub-title center">
             <h2>PREZENȚA LA VOT PER VÂRSTĂ ȘI GEN</h2>
-            <small
-              >Au votat {{ presence.F }} femei și
-              {{ presence.M }} bărbați</small
-            >
+            <small>
+              Au votat {{ presence.F }} femei și {{ presence.M }} bărbați
+            </small>
             <canvas ref="canvas"></canvas>
           </div>
         </div>
@@ -51,19 +52,11 @@ export default {
     ProgressBar,
   },
   data: () => ({
-    categories: ["18-25 ani", "26-40 ani", "41-55 ani", "56-70 ani", "71+ ani"],
-    data: {
-      labels: this.categories,
+    chartData: {
+      labels: ["18-25 ani", "26-40 ani", "41-55 ani", "56-70 ani", "71+ ani"],
       datasets: [
         {
           label: "Voturi",
-          data: [
-            this.presence.C1,
-            this.presence.C2,
-            this.presence.C3,
-            this.presence.C4,
-            this.presence.C5,
-          ],
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
             "rgba(54, 162, 235, 0.2)",
@@ -76,7 +69,7 @@ export default {
         },
       ],
     },
-    options: {
+    chartOptions: {
       plugins: {
         labels: [
           {
@@ -107,7 +100,15 @@ export default {
     },
   },
   mounted() {
-    this.renderChart(this.data, this.options);
+    this.chartData.datasets[0].data = [
+      this.presence.C1,
+      this.presence.C2,
+      this.presence.C3,
+      this.presence.C4,
+      this.presence.C5,
+    ];
+
+    this.renderChart(this.chartData, this.chartOptions);
   },
   methods: {
     toPercentage(f1, f2) {
